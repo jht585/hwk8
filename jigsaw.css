@@ -8,3 +8,31 @@ body {
     top: 50px;
     left: 500px;
 }
+
+#doneButton{
+    position: absolute;
+    top: 375px;
+    left: 670px;
+}
+
+#timeHead{
+    position: absolute;
+    top: 175px;
+    left: 1010px;
+    color: white;
+    text-shadow: 0.5px 0.5px grey;
+}
+
+#timer{
+   border-style: solid;
+   border-width: thin;
+   background-color: black;
+   color: white;
+   border-color: white;
+   position: absolute;
+   top: 200px;
+   left: 1010px;
+   width: 100px;
+   height: 25px;
+   text-align: center;
+}
