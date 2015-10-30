@@ -90,6 +90,7 @@ function verify() {
         }
         if (correct) {
             alert("Congratulations! You got it.");
+            endCount();
         } else {
             alert("Better luck next time");
         }
@@ -124,3 +125,4 @@ function countTime() {
 
 function endCount() {
   continuing = false;}
+
