@@ -12,21 +12,19 @@ for (var i = 0; i < 12; i++) {
 
 
 
-
-
+//////////////////////////////////////////////////////////////
+//    Handler Functions for dragging and dropping images    //
+//////////////////////////////////////////////////////////////
 var diffX, diffY, theElement;
-
-
 
 
 function grabber(event) {
 
     theElement = event.currentTarget;
 
-
     var posX = parseInt(theElement.style.left);
-
     var posY = parseInt(theElement.style.top);
+
     diffX = event.clientX - posX;
     diffY = event.clientY - posY;
 
@@ -34,7 +32,6 @@ function grabber(event) {
     document.addEventListener("mouseup", dropper, true);
 
     event.stopPropagation();
-
     event.preventDefault();
 
 }
@@ -42,18 +39,15 @@ function grabber(event) {
 
 function mover(event) {
 
-
     theElement.style.left = (event.clientX - diffX) + "px";
-
     theElement.style.top = (event.clientY - diffY) + "px";
-
 
     event.stopPropagation();
 }
 
 
 function dropper(event) {
-
+// Perform snap when mouse released
     snapper(event);
 
     document.removeEventListener("mouseup", dropper, true);
@@ -63,11 +57,11 @@ function dropper(event) {
 }
 
 
-
+// Reads X, Y values of pointer
+// If values within range of puzzleback.gif, will round down X and Y to multiple of 100
 function snapper(event) {
-    if (500 < event.clientX < 900 && 50 < event.clientY < 350) {
+    if ((event.clientX > 500) && (event.clientX < 900) && (event.clientY > 50) && (event.clientY < 350)) {
         theElement.style.top = ((Math.floor((event.clientY - 50) / 100) * 100) + 50) + "px";
         theElement.style.left = (Math.floor(event.clientX / 100) * 100) + "px";
     }
-
 }
