@@ -20,6 +20,7 @@ shuffle(arr);
 // Assign images to existing <img> slots in order defined by array
 for (var i = 0; i < 12; i++) {
     document.getElementById((i+1).toString()).src = "./images" + imgset.toString() + "/img" + imgset.toString() + "-" + arr[i] + ".jpg";
+    document.getElementById((i+1).toString()).alt = (parseInt(arr[i]) - 1);
 }
 
 
@@ -65,3 +66,29 @@ function snapper(event) {
         theElement.style.left = (Math.floor(event.clientX / 100) * 100) + "px";
     }
 }
+
+
+
+//////////////////////////////////////////////////////////////
+//       Verification Function For Checking Placement       //
+//////////////////////////////////////////////////////////////
+
+function verify() {
+    return function() {
+        var serial;
+        var correct = true;
+        var imgs = document.getElementsByClassName("slot");
+        for (i = 0; i < 12; i ++) {
+            serial = parseInt(imgs[i].alt);
+            if (((imgs[i].offsetLeft - 500) - (100 * (serial % 4)) != 0) && ((imgs[i].offsetTop - 50)  - (100 * (serial % 3)) != 0)) {
+               correct = false;
+            }
+        }
+        if (correct) {
+            alert("Congratulations! You got it.");
+        } else {
+            alert("Better luck next time");
+        }
+    }
+}
+document.getElementById("doneButton").onclick = verify();
