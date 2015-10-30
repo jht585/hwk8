@@ -69,18 +69,29 @@ function snapper(event) {
     }
 }
 
-
-
 ///////////////////////
 //  Timing Function  //
 ///////////////////////
 var secondElapsed = 0;
+var min = 0;
+var sec = 0;
+var minStr = "";
+var secStr = "";
+var continuing = true;
 
 function Timer() {
   setInterval("countTime()",1000);
 }
+
 function countTime() {
-    document.getElementById("timer").innerHTML = secondElapsed;
+  if (continuing == true) {
+    min = Math.floor(secondElapsed/60);
+    sec = secondElapsed - min*60;}
+    if (min < 10) { minStr = "0" + min.toString()} else {minStr = min.toString()}
+    if (sec < 10) { secStr = "0" + sec.toString()} else {secStr = sec.toString()}
+    document.getElementById("timer").innerHTML = minStr + ":" + secStr;
     secondElapsed++;
 }
-  
+
+function endCount() {
+  continuing = false;}

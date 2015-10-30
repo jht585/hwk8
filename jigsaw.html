@@ -11,10 +11,10 @@
 <p>
     
 <img src = "./puzzleback.gif" alt = "Puzzle" id="puzzleback"/><br />
-<button type="button" id="doneButton"> Done </button>
+<button type="button" id="doneButton" onclick="endCount()"> Done </button>
 <div>
 <h3 id="timeHead"> Time Taken </h3>
-<p id="timer"> 0 </p>
+<p id="timer"> 00:00 </p>
 </div>
 <img id="1" src = "./images1/img1-1.jpg" alt = "Piece1" style = "position: absolute; top: 425px; left: 385px;" onmousedown = "grabber(event);"/>
 <img id="2" src = "./images1/img1-2.jpg" alt = "Piece2" style = "position: absolute; top: 425px; left: 490px;" onmousedown = "grabber(event);"/>
@@ -30,9 +30,7 @@
 <img id="12" src = "./images1/img1-12.jpg" alt = "Piece12" style = "position: absolute; top: 530px; left: 910px;" onmousedown = "grabber(event);"/>
 </p>
 
-
 <script type = "text/javascript" src = "./jigsaw.js"></script>
-
 
 </body>
 
