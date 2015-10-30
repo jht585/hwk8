@@ -6,7 +6,7 @@
 <link rel = "stylesheet" type = "text/css" href = "./jigsaw.css" media = "all" />
 </head>
 
-<body>
+<body onload="Timer()">
 
 <p>
     
@@ -14,7 +14,7 @@
 <button type="button"> Done </button>
 <div>
 <h3> Time Taken </h3>
-<p> TIME </p>
+<p id="timer"> 0 </p>
 </div>
 <img id="1" src = "./images1/img1-1.jpg" alt = "Piece1" style = "position: absolute; top: 375px; left: 385px;" onmousedown = "grabber(event);"/>
 <img id="2" src = "./images1/img1-2.jpg" alt = "Piece2" style = "position: absolute; top: 375px; left: 490px;" onmousedown = "grabber(event);"/>

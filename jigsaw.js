@@ -1,3 +1,6 @@
+////////////////////////////////
+//  Randomizing the Image Set //
+////////////////////////////////
 var imgset = Math.floor (Math.random() * 3)+1;
 var arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
@@ -65,3 +68,19 @@ function snapper(event) {
         theElement.style.left = (Math.floor(event.clientX / 100) * 100) + "px";
     }
 }
+
+
+
+///////////////////////
+//  Timing Function  //
+///////////////////////
+var secondElapsed = 0;
+
+function Timer() {
+  setInterval("countTime()",1000);
+}
+function countTime() {
+    document.getElementById("timer").innerHTML = secondElapsed;
+    secondElapsed++;
+}
+  
